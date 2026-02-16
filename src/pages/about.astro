@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/BlogPost.astro';
+import profileImage from '../assets/blog/1742158459857.jpeg';
+import streamspotImage from '../assets/blog/streamspot-buffalogrid.jpeg';
+---
+
+<Layout
+	title="About"
+	description="About Andrew McCaughan"
+>
+	<div class="flex justify-center mb-8">
+		<Image src={profileImage} alt="Andrew McCaughan" width={280} height={280} class="rounded-full" />
+	</div>
+
+	<p>Hi, I’m Andrew McCaughan.</p>
+
+	<p>
+		Over the last decade I’ve operated on multiple levels as a leader in software teams and organisations.
+		I’m strongest at growing and nurturing teams, and building the systems and habits that help organisations
+		spot problems early, reduce friction, and steadily get better.
+	</p>
+
+	<p>
+		I’ve led engineering and product groups, built teams from scratch, steadied delivery when things were
+		wobbling, and helped teams become predictably high-performing.
+	</p>
+
+	<p>
+		I’m at my best where the work matters and has a purpose. Public services, infrastructure, and products
+		that improve everyday life are where I do my strongest work.
+	</p>
+
+	<div class="my-8">
+		<Image src={streamspotImage} alt="StreamSpot by BuffaloGrid" width={720} height={540} class="rounded-lg" />
+	</div>
+
+	<p>
+		Previously, I was CTO at BuffaloGrid, where we built StreamSpot, a solar-powered edge device that provided
+		reliable power and digital services without needing an internet connection. It was deployed in
+		Bangladesh, Nigeria, Zambia, and Mozambique.  It's been the most rewarding experience of my working life so far. 
+		It made me focus on importance of building reliable, distributed systems with significant
+		financial constraints, and building products for a demographic chronically underserved by technology and digital services.{' '}
+		<a href="https://unreasonablegroup.com/ventures/buffalogrid" rel="noreferrer">You can find out more about BuffaloGrid's journey here.</a>
+	</p>
+
+	<p>
+		Earlier in my career I worked with organisations including Philips and Intel, and I delivered projects
+		in local government and energy as an independent contractor. I try to give back to an industry that’s
+		given me a lot. I coach engineers and aspiring leaders, and I’ve done mentoring in various forms over
+		the years. In the past, I helped organise and run DDD Belfast.
+	</p>
+
+
+	<p>
+		On this blog I write about the craft of software engineering: the tensions between features and quality,
+		speed and sustainability, and what real-world delivery teaches you.
+	</p>
+
+	<h2>As seen on the Internet</h2>
+	<ul>
+		<li><strong>Podcast</strong> <a href="https://www.youtube.com/watch?v=JFSCHDUs-eA&t=1152s" rel="noreferrer">The CT-OOH - What is a CTO?</a></li>
+		<li><strong>Interview</strong> <a href="https://www.devicechronicle.com/digital-divide" rel="noreferrer">Device Chronicle - Bridging the Digital Divide with IoT & OTA Software Updates</a></li>
+		<li><strong>Podcast</strong> <a href="https://www.it-labs.com/podcast-connecting-people-to-the-digital-world-with-andrew-mccaughan/" rel="noreferrer">CTO Confessions - Connecting People to the Digital World</a></li>
+	</ul>
+
+	<h2>Experience and skills</h2>
+
+	<h4>Sectors</h4>
+	<ul>
+		<li>Life sciences</li>
+		<li>Energy and Utilities</li>
+		<li>Local, devolved, and central Government</li>
+		<li>Education</li>
+		<li>Healthcare</li>
+	</ul>
+
+	<h4>Skills</h4>
+	<ul>
+		<li>Building teams from scratch</li>
+		<li>Transforming teams into high-performers</li>
+		<li>Software architecture</li>
+		<li>Cloud computing</li>
+		<li>Coaching and mentoring</li>
+	</ul>
+
+	<h2>Disclaimer</h2>
+	<p>
+		The views and opinions expressed in this blog are solely those of the author, Andrew McCaughan,
+		and do not necessarily reflect the views of any past or present employers mentioned on this site.
+	</p>
+</Layout>

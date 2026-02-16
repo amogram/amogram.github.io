@@ -1,0 +1,51 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog'))
+	.filter((post) => !post.data.draft)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="min-h-screen flex flex-col">
+		<Header />
+		<main class="flex-1 container mx-auto px-4 py-12 max-w-3xl">
+			<section class="mb-16">
+				<h1 class="text-4xl font-bold tracking-tight mb-4">Greetings 👋</h1>
+				<p class="text-lg text-muted-foreground">I'm Andrew. I write about building software and teams, and I share the nuances most people skip.</p>
+			</section>
+			
+			<section>
+				<h2 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-6">Recent Posts</h2>
+				<div class="space-y-6">
+					{
+						posts.slice(0, 10).map((post) => (
+							<a
+								href={`/blog/${post.id}/`}
+								class="group block"
+							>
+								<div class="flex items-baseline justify-between gap-4">
+									<h3 class="text-lg font-medium group-hover:text-primary transition-colors">{post.data.title}</h3>
+									<span class="text-sm text-muted-foreground shrink-0">
+										<FormattedDate date={post.data.pubDate} />
+									</span>
+								</div>
+							</a>
+						))
+					}
+				</div>
+				<a href="/blog" class="inline-block mt-8 text-sm font-medium hover:underline">View all posts &rarr;</a>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
